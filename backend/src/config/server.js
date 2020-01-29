@@ -7,6 +7,8 @@ const server = express()
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 
-server.listen(port, function(){
+server.listen(port, function () {
     console.log(`Running on ${port}`)
 })
+
+module.exports = server
