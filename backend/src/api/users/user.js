@@ -14,7 +14,10 @@ const userSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now },
     username: { type: String, required: true, minlength: 4, maxlength: 16 },
     password: { type: String, required: true, minlength: 4, maxlength: 16 },
-    activities: { type: JSON},
+    activities: [{
+        date: { type: Date },
+        activities: [{ name: { type: String }, duration: { type: Number } }],
+    }],
 })
 
 userSchema.pre('save', function (next) {
@@ -34,3 +37,26 @@ module.exports = restful.model('User', userSchema)
     dormir: {type: Number},
     andar: {type: Number},
 })*/
+
+
+// POST BODY
+
+// {
+// 	"username":"kjasdfha",
+// 	"password": "jhasdfkjhasdf",
+// 	"activities":[{
+// 					"date": "2020-01-30T18:42:46.609Z",
+// 					"activities": [
+// 							{ "name": "Almoçar", "duration": 30 },
+// 							{ "name": "Dormir", "duration": 120 }
+// 					]
+// 			}, 
+// 	{
+// 					"date": "2020-01-29T18:42:46.609Z",
+// 					"activities": [
+// 							{ "name": "Almoçar", "duration": 30 },
+// 							{ "name": "Cagar", "duration": 45 },
+// 							{ "name": "Dormir", "duration": 120 }
+// 					]
+// 	}]
+// }
