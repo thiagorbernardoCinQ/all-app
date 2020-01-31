@@ -1,0 +1,14 @@
+BACKEND:
+npm install
+Dev: 
+npm run dev
+Production:
+npm run production
+npm install -g pm2
+pm2 monit
+
+
+FRONTEND:
+npm install -g @angular/cli
+ng build --prod
+ng serve --open
