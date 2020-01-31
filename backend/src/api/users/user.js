@@ -2,13 +2,7 @@ const restful = require('node-restful')
 //const bcrypt = require('bcrypt')
 const saltRounds = 10;
 const mongoose = restful.mongoose
-class activities {
-    constructor(correr, andar, dormir) {
-        this.correr = correr;
-        this.andar = andar;
-        this.correr = correr;
-    }
-}
+
 //new Date().toISOString().split('T')[0]
 const userSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now },
@@ -19,6 +13,7 @@ const userSchema = new mongoose.Schema({
         activities: [{ name: { type: String }, duration: { type: Number } }],
     }],
 })
+
 /*
 userSchema.pre('save', function (next) {
     this.password = bcrypt.hashSync(this.password, saltRounds);
