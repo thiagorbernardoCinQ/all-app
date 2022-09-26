@@ -16,7 +16,7 @@
     "mongoose": "5.8.10",
     "node-gyp": "^6.1.0",
     "node-restful": "0.2.6",
-    "pm2": "4.2.3",
+    "pm2": "5.2.0",
     "python": "0.0.4"
   },
   "devDependencies": {
